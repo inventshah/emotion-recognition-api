@@ -1,0 +1,62 @@
+{
+  "name": "emotion-recognition-api",
+  "version": "0.0.1",
+  "description": "JavaScript API for emotion recognition in the browser",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run build:esm && npm run build:types",
+    "build:types": "tsc --emitDeclarationOnly --outDir lib",
+    "build:esm": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inventshah/emotion-recognition-api.git"
+  },
+  "keywords": [
+    "recognition",
+    "emotion",
+    "tensorflow",
+    "tf"
+  ],
+  "contributors": [
+    {
+      "name": "Sachin Shah",
+      "email": "sachin.shah@knights.ucf.edu"
+    },
+    {
+      "name": "Kamran Ali",
+      "email": "kamran.ali@ucf.edu"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/inventshah/emotion-recognition-api/issues"
+  },
+  "homepage": "https://github.com/inventshah/emotion-recognition-api#readme",
+  "devDependencies": {
+    "esbuild": "^0.17.18",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.4.0"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/src/index.d.ts",
+        "default": "./lib/index.mjs"
+      },
+      "require": {
+        "types": "./lib/src/index.d.ts",
+        "default": "./lib/index.cjs.js"
+      }
+    }
+  },
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.mjs",
+  "browser": "lib/index.js",
+  "types": "lib/src/index.d.ts",
+  "files": [
+    "lib"
+  ]
+}
