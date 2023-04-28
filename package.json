@@ -18,12 +18,10 @@
   ],
   "contributors": [
     {
-      "name": "Sachin Shah",
-      "email": "sachin.shah@knights.ucf.edu"
+      "name": "Sachin Shah"
     },
     {
-      "name": "Kamran Ali",
-      "email": "kamran.ali@ucf.edu"
+      "name": "Kamran Ali"
     }
   ],
   "license": "Apache-2.0",
