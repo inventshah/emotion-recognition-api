@@ -1,0 +1,16 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "example of emotion-recognition-api",
+  "scripts": {
+    "build": "esbuild index.ts --minify --bundle --outfile=public/index.js"
+  },
+  "dependencies": {
+    "@tensorflow-models/face-detection": "^1.0.1",
+    "@tensorflow/tfjs-backend-webgl": "^3.14.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.18",
+    "typescript": "^5.0.4"
+  }
+}

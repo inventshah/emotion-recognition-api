@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>emotion-recognition-api demo</title>
+		<script src="public/index.js" defer></script>
+		<style>
+			video,
+			canvas {
+				width: min(90vh, 90vw);
+				position: fixed;
+				top: 5em;
+				left: 25%;
+			}
+			canvas {
+				z-index: 10;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align: center">
+			Demo of TER-GAN Expression Recognition
+		</h1>
+		<div style="position: relative; display: flex; justify-content: center">
+			<video id="webcam" autoplay muted playsinline></video>
+			<canvas id="overlay"></canvas>
+		</div>
+	</body>
+</html>

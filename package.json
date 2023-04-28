@@ -4,9 +4,7 @@
   "description": "JavaScript API for emotion recognition in the browser",
   "scripts": {
     "clean": "rm -rf ./lib",
-    "build": "npm run build:esm && npm run build:types",
-    "build:types": "tsc --emitDeclarationOnly --outDir lib",
-    "build:esm": "node build.js"
+    "build": "tsc --outDir lib"
   },
   "repository": {
     "type": "git",
@@ -38,25 +36,24 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^4.4.0"
+    "@tensorflow/tfjs": ">3.4.0"
   },
   "exports": {
     ".": {
       "import": {
         "types": "./lib/src/index.d.ts",
-        "default": "./lib/index.mjs"
+        "default": "./lib/src/index.js"
       },
       "require": {
         "types": "./lib/src/index.d.ts",
-        "default": "./lib/index.cjs.js"
+        "default": "./lib/src/index.js"
       }
     }
   },
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.mjs",
-  "browser": "lib/index.js",
+  "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "models"
   ]
 }

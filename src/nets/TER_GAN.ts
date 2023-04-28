@@ -16,7 +16,7 @@ export class TERGAN extends BaseEmotionNet {
 
 	public preprocess(data: ImageData, box: BoundingBox): tf.Tensor4D {
 		return tf.tidy(() => {
-			const cropped = cropImage(data, box, [224, 244]);
+			const cropped = cropImage(data, box, [224, 224]);
 			const channelsFirst = tf.transpose(cropped, [0, 3, 1, 2]);
 			return tf.div(channelsFirst, 255);
 		});
@@ -27,9 +27,8 @@ export class TERGAN extends BaseEmotionNet {
 		return tf.tidy(() => {
 			if (this.recognition === null) return;
 			const out = this.recognition.execute(data) as tf.Tensor;
-			const best = tf.argMax(tf.softmax(out)).arraySync() as number;
-			console.log(best);
-			return emotions[best];
+			const best = tf.argMax(tf.softmax(out), 1).arraySync() as [number];
+			return emotions[best[0]];
 		});
 	}
 }
